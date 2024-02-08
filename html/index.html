@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="tilt.jquery.js"></script>
+</head>
+
+<body scroll="no" style="overflow: hidden;">
+   
+    <!--L E F T   C O N T A I N E R-->
+    
+    <div id="left-container">
+        <div id="top-content">
+            <h2 id="title">Kategoria</h2>
+            <h1 id="subtitle">Twarz</h1>
+        </div>
+        <div id="nav-btns">
+            <a class="btns" id="kat1"><img style="width: 41.5px; height: auto;"  src="img/face.png"></a>
+            <a class="btns" id="kat2"><img src="img/eye.png"></a>
+            <a class="btns" id="kat3"><img style="width: 40px; height: auto;"  src="img/nose.png"></a>
+            <a class="btns" id="kat4"><img src="img/mouth.png"></a>
+            <a class="btns" id="kat5"><img style="width: 40px; height: auto;"  src="img/thought.png"></a>
+        </div>
+        
+        <div class="content" id="kategoria1">
+            
+            <div class="slider">
+                <p class="range-txt">Wygląd twarzy</p>
+                <div class="range-slider">
+                    <input name="face" class="range-slider__range" id='face_slider' type="range" value="0" min="0" max="45" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            
+            <div class="slider">
+                <p class="range-txt">Kolor skóry</p>
+                <div class="range-slider">
+                    <input name="skin" class="range-slider__range" id='skin_slider' type="range" value="0" min="0" max="45" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content" id="kategoria2">
+            <div class="slider">
+                <p class="range-txt">Kolor oczu</p>
+                <div class="range-slider">
+                    <input name="eye_color" class="range-slider__range" type="range" value="0" min="0" max="31" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Szerokość otwarcia oczu</p>
+                <div class="range-slider">
+                    <input name="eye_open" class="range-slider__range" type="range" value="10" min="0" max="20" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content" id="kategoria3">
+            <div class="slider">
+                <p class="range-txt">Szerokość nosa</p>
+                <div class="range-slider">
+                    <input name="nose_1" class="range-slider__range" type="range" value="10" min="0" max="20" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Wysokość czubka nosa</p>
+                <div class="range-slider">
+                    <input name="nose_2" class="range-slider__range" type="range" value="10" min="0" max="20" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Długość czubka nosa</p>
+                <div class="range-slider">
+                    <input name="nose_3" class="range-slider__range" type="range" value="10" min="0" max="20" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Wysokość kości nosowej</p>
+                <div class="range-slider">
+                    <input name="nose_4" class="range-slider__range" type="range" value="10" min="0" max="20" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Obniżenie czubka nosa</p>
+                <div class="range-slider">
+                    <input name="nose_5" class="range-slider__range" type="range" value="10" min="0" max="20" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Skręcenie kości nosowej</p>
+                <div class="range-slider">
+                    <input name="nose_6" class="range-slider__range" type="range" value="10" min="0" max="20" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content" id="kategoria4">
+            <div class="slider">
+                <p class="range-txt">Styl szminki</p>
+                <div class="range-slider">
+                    <input name="lipstick_1" class="range-slider__range" type="range" value="0" min="0" max="9" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Intensywność szminki</p>
+                <div class="range-slider">
+                    <input name="lipstick_2" class="range-slider__range" type="range" value="0" min="0" max="10" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Kolor szminki 1</p>
+                <div class="range-slider">
+                    <input name="lipstick_3" class="range-slider__range" type="range" value="0" min="0" max="63" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Kolor szminki 2</p>
+                <div class="range-slider">
+                    <input name="lipstick_4" class="range-slider__range" type="range" value="0" min="0" max="63" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Szerokość ust</p>
+                <div class="range-slider">
+                    <input name="lips_thick" class="range-slider__range" type="range" value="10" min="0" max="20" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content" id="kategoria5">
+            <div class="slider">
+                <p class="range-txt">Wysokość kości policzkowych</p>
+                <div class="range-slider">
+                    <input name="cheeks_1" class="range-slider__range" type="range" value="10" min="0" max="20" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Szerokość kości policzkowych</p>
+                <div class="range-slider">
+                    <input name="cheeks_2" class="range-slider__range" type="range" value="10" min="0" max="20" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Szerokość policzek</p>
+                <div class="range-slider">
+                    <input name="cheeks_3" class="range-slider__range" type="range" value="10" min="0" max="20" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Szerokość kości szczęki</p>
+                <div class="range-slider">
+                    <input name="jaw_1" class="range-slider__range" type="range" value="10" min="0" max="20" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Długość kości szczęki</p>
+                <div class="range-slider">
+                    <input name="jaw_2" class="range-slider__range" type="range" value="10" min="0" max="20" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Wysokość brody</p>
+                <div class="range-slider">
+                    <input name="chimp_1" class="range-slider__range" type="range" value="10" min="0" max="20" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Szerokość brody</p>
+                <div class="range-slider">
+                    <input name="chimp_2" class="range-slider__range" type="range" value="10" min="0" max="20" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Długość brody</p>
+                <div class="range-slider">
+                    <input name="chimp_3" class="range-slider__range" type="range" value="10" min="0" max="20" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Rozmiar wgłębienia pod brodą</p>
+                <div class="range-slider">
+                    <input name="chimp_4" class="range-slider__range" type="range" value="10" min="0" max="20" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Grubość szyji</p>
+                <div class="range-slider">
+                    <input name="neck" class="range-slider__range" type="range" value="10" min="0" max="20" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!--R I G H T   C O N T A I N E R-->
+    
+    <div id="right-container">
+        <div id="top-content2">
+            <h2 id="title">Kategoria</h2>
+            <h1 style="font-size: 22px; margin: 0px; padding: 0px; position: relative; color: lightgray; font-weight: lighter;" id="2subtitle">Zarost</h1>
+        </div>
+        <div id="nav-btns">
+            <a class="btns" id="2kat1"><img style="width: 46px; height: auto;"  src="img/beard.png"></a>
+            <a class="btns" id="2kat2"><img style="width: 40px; height: auto;" src="img/body.png"></a>
+            <a class="btns" id="2kat3"><img src="img/tshirt.png"></a>
+            <a class="btns" id="2kat4"><img style="width: 40px; height: auto;"  src="img/pants.png"></a>
+            <a class="btns" id="2kat5"><img src="img/shoes.png"></a>
+        </div>
+        
+        <div style="display: block;" class="content" id="2kategoria1">
+            <div class="slider">
+                <p class="range-txt">Styl włosów</p>
+                <div class="range-slider">
+                    <input name="hair_1" class="range-slider__range" type="range" value="0" min="0" max="73" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Styl włosów 2</p>
+                <div class="range-slider">
+                    <input name="hair_2" class="range-slider__range" type="range" value="0" min="0" max="73" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Kolor włosów 1</p>
+                <div class="range-slider">
+                    <input name="hair_color_1" class="range-slider__range" type="range" value="0" min="0" max="63" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Kolor włosów 2</p>
+                <div class="range-slider">
+                    <input name="hair_color_2" class="range-slider__range" type="range" value="0" min="0" max="63" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Styl brody</p>
+                <div class="range-slider">
+                    <input name="beard_1" class="range-slider__range" type="range" value="0" min="0" max="28" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Gęstość brody</p>
+                <div class="range-slider">
+                    <input name="beard_2" class="range-slider__range" type="range" value="0" min="0" max="10" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Kolor brody 1</p>
+                <div class="range-slider">
+                    <input name="beard_3" class="range-slider__range" type="range" value="0" min="0" max="64" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Kolor brody 2</p>
+                <div class="range-slider">
+                    <input name="beard_4" class="range-slider__range" type="range" value="0" min="0" max="63" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Styl brwi</p>
+                <div class="range-slider">
+                    <input name="eyebrows_1" class="range-slider__range" type="range" value="0" min="0" max="33" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Gęstość brwi</p>
+                <div class="range-slider">
+                    <input name="eyebrows_2" class="range-slider__range" type="range" value="0" min="0" max="10" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Kolor brwi 1</p>
+                <div class="range-slider">
+                    <input name="eyebrows_3" class="range-slider__range" type="range" value="0" min="0" max="63" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Kolor brwi 2</p>
+                <div class="range-slider">
+                    <input name="eyebrows_4" class="range-slider__range" type="range" value="0" min="0" max="63" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content" id="2kategoria2">
+            <div class="slider">
+                <p class="range-txt">Koszulka</p>
+                <div class="range-slider">
+                    <input name="tshirt_1" class="range-slider__range" type="range" value="0" min="0" max="143" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Wzór koszulki</p>
+                <div class="range-slider">
+                    <input name="tshirt_2" class="range-slider__range" type="range" value="0" min="0" max="25" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Tułów</p>
+                <div class="range-slider">
+                    <input name="torso_1" class="range-slider__range" type="range" value="0" min="0" max="289" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Wzór tułowia</p>
+                <div class="range-slider">
+                    <input name="torso_2" class="range-slider__range" type="range" value="0" min="0" max="25" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Ramiona 1</p>
+                <div class="range-slider">
+                    <input name="arms" class="range-slider__range" type="range" value="0" min="0" max="167" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Ramiona 2</p>
+                <div class="range-slider">
+                    <input name="arms_2" class="range-slider__range" type="range" value="0" min="0" max="10" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content" id="2kategoria3">
+            <div class="slider">
+                <p class="range-txt">Spodnie</p>
+                <div class="range-slider">
+                    <input name="pants_1" class="range-slider__range" type="range" value="0" min="0" max="114" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Wzór spodni</p>
+                <div class="range-slider">
+                    <input name="pants_2" class="range-slider__range" type="range" value="0" min="0" max="25" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Buty</p>
+                <div class="range-slider">
+                    <input name="shoes_1" class="range-slider__range" type="range" value="0" min="0" max="90" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+            <div class="slider">
+                <p class="range-txt">Wzór butów</p>
+                <div class="range-slider">
+                    <input name="shoes_2" class="range-slider__range" type="range" value="0" min="0" max="25" oninput="getSliderValue(this);">
+                    <span style="color: lightgray;" class="range-slider__value">0</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content" id="2kategoria4">
+            
+        </div>
+        
+        <div class="content" id="2kategoria5">
+            
+        </div>
+        
+    </div>
+    <center><button id="submit" type="submit">Stwórz postać</button></center>
+    
+</body>
+    <script>
+        function getSliderValue(e){
+            var nameOfSlider = $(e).attr('name')
+            var valueOfSlider = $(e).val();
+            $.post('http://quantum_creator/changeskin', JSON.stringify({
+                name: nameOfSlider,
+                value: valueOfSlider
+            }));
+        }
+
+        var rangeSlider = function(){
+        var slider = $('.range-slider'),
+            range = $('.range-slider__range'),
+            value = $('.range-slider__value');
+    
+        slider.each(function(){
+
+        value.each(function(){
+            var value = $(this).prev().attr('value');
+            $(this).html(value);
+            });
+
+            range.on('input', function(){
+        $(this).next(value).html(this.value);
+        });
+       });
+      };
+    rangeSlider(); 
+        //L E F T   C O N T A I N E R//
+        $("#kat1").on('click', function() {
+            $("#kategoria1").css("display", "block");
+            $("#subtitle").html('Twarz');
+            $("#kategoria2,#kategoria3,#kategoria4,#kategoria5").css("display", "none");
+            $.post('http://quantum_creator/changezoom', JSON.stringify({zoom: 'face'}));
+        });
+        
+        $("#kat2").on('click', function() {
+            $("#kategoria2").css("display", "block");
+            $("#subtitle").html('Oczy');
+            $("#kategoria1,#kategoria3,#kategoria4,#kategoria5").css("display", "none");
+            $.post('http://quantum_creator/changezoom', JSON.stringify({zoom: 'face'}));
+        });
+        
+        $("#kat3").on('click', function() {
+            $("#kategoria3").css("display", "block");
+            $("#subtitle").html('Nos');
+            $("#kategoria1,#kategoria2,#kategoria4,#kategoria5").css("display", "none");
+            $.post('http://quantum_creator/changezoom', JSON.stringify({zoom: 'face'}));
+        });
+        
+        $("#kat4").on('click', function() {
+            $("#kategoria4").css("display", "block");
+            $("#subtitle").html('Usta');
+            $("#kategoria1,#kategoria2,#kategoria3,#kategoria5").css("display", "none");
+            $.post('http://quantum_creator/changezoom', JSON.stringify({zoom: 'face'}));
+        });
+        
+        $("#kat5").on('click', function() {
+            $("#kategoria5").css("display", "block");
+            $("#subtitle").html('Dolna partia twarzy');
+            $("#kategoria1,#kategoria2,#kategoria3,#kategoria4").css("display", "none");
+            $.post('http://quantum_creator/changezoom', JSON.stringify({zoom: 'face'}));
+        });
+        
+        //R I G H T   C O N T A I N E R//
+        
+        $("#2kat1").on('click', function() {
+            $("#2kategoria1").css("display", "block");
+            $("#2subtitle").html('Zarost');
+            $("#2kategoria2,#2kategoria3,#2kategoria4,#2kategoria5").css("display", "none");
+            $.post('http://quantum_creator/changezoom', JSON.stringify({zoom: 'face'}));
+        });
+        
+        $("#2kat2").on('click', function() {
+            $("#2kategoria2").css("display", "block");
+            $("#2subtitle").html('Tułów');
+            $("#2kategoria1,#2kategoria3,#2kategoria4,#2kategoria5").css("display", "none");
+            $.post('http://quantum_creator/changezoom', JSON.stringify({zoom: 'torso'}));
+        });
+        
+        $("#2kat3").on('click', function() {
+            $("#2kategoria3").css("display", "block");
+            $("#2subtitle").html('Dolna partia');
+            $("#2kategoria1,#2kategoria2,#2kategoria4,#2kategoria5").css("display", "none");
+            $.post('http://quantum_creator/changezoom', JSON.stringify({zoom: 'legs'}));
+        });
+        
+        $("#2kat4").on('click', function() {
+            $("#2kategoria4").css("display", "block");
+            $("#2subtitle").html('Dodatki');
+            $("#2kategoria1,#2kategoria2,#2kategoria3,#2kategoria5").css("display", "none");
+        });
+        
+        $("#2kat5").on('click', function() {
+            $("#2kategoria5").css("display", "block");
+            $("#2subtitle").html('Buty');
+            $("#2kategoria1,#2kategoria2,#2kategoria3,#2kategoria4").css("display", "none");
+        });
+
+        $("#submit").on('click', function() {
+            $.post('http://quantum_creator/createcharacter', JSON.stringify({}));
+        });
+        
+        //P A R A L A X    E F F E C T//
+        $(document).ready(function () {
+            $('body').tilt({
+                maxTilt: 1,
+                speed: 2500,
+                reset: false
+            });
+        });
+
+        document.onkeydown = function(data){
+            if (data.which == 65){
+                $.post('http://quantum_creator/rotateped', JSON.stringify({
+                    side: 'left'
+                }));
+            } else if (data.which == 68){
+                $.post('http://quantum_creator/rotateped', JSON.stringify({
+                    side: 'right'
+                }));
+            }
+        }
+
+        window.addEventListener('message', function(event) {
+            var item = event.data;
+            if (item.action === "toggle") {
+                if (item.status == true) {
+                    $('body').show();
+                } else {
+                    $('body').hide();
+                }
+            }
+        })
+    </script>
+</html>
